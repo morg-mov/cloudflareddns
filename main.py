@@ -1,8 +1,14 @@
+"""
+morg-mov/cloudflareddns
+A script that dynamically updates your IP address via the Cloudflare API.
+"""
 import os
 from time import sleep
 from dotenv import load_dotenv
 import requests
 import CloudFlare
+
+print("Starting DDNS Script...")
 
 # Environment init
 load_dotenv(".env")
@@ -31,6 +37,8 @@ for i in [CF_TOKEN, CF_ZONE, CF_DNSNAMES]:
 if DDNS_CHECKDELAY is None:
     DDNS_CHECKDELAY = 300
 
+# Handling "true" and "false" text values is a little complicated.
+# Until I can get that down, this will set True if the variable is populated whatsoever. 
 if CF_PROXIED is None:
     CF_PROXIED = False
 else:
@@ -94,7 +102,7 @@ def update_dns(lastip) -> None:
             # If record doesn't exist, create it.
             if len(record) == 0:
                 try:
-                    cf.zones.dns_records.post(zoneid, json=recordinfo)
+                    cf.zones.dns_records.post(zoneid, data=recordinfo)
                     print(f"Created DNS record for {i}. IP address is {ip}.")
                 except CloudFlare.exceptions.CloudFlareAPIError as e:
                     error(f"Could not create DNS record for {i}: {e}")
@@ -105,7 +113,7 @@ def update_dns(lastip) -> None:
                     cf.zones.dns_records.patch(
                         zoneid, record[0]["id"], data=recordinfo
                     )
-                    print(f"Updated DNS record for {i}.dorkd.net. IP address is {ip}.")
+                    print(f"Updated DNS record for {i}. IP address is {ip}.")
                 except CloudFlare.exceptions.CloudFlareAPIError as e:
                     error(f"Could not update DNS record for {i}: {e}")
 
