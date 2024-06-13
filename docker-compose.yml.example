@@ -1,0 +1,7 @@
+version: 3.2
+
+services:
+  ddns:
+    image: ghcr.io/morg-mov/cloudflareddns:latest
+    env_file: ".env"
+    restart: always
