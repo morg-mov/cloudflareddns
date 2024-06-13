@@ -14,8 +14,8 @@ A (wip) docker container/python script that dynamically updates your DNS records
     cd cloudflareddns
     docker build -t ghcr.io/morg-mov/cloudflareddns .
     ```
-2. Download and use [this](https://github.com/morg-mov/cloudflareddns/blob/main/docker-compose.yml) docker-compose file and edit it to your needs.
-3. Create a .env file [or use a template](https://github.com/morg-mov/cloudflareddns/blob/main/.env.example) and [set at least the required variables](#variables).
+2. Download and use [this](https://github.com/morg-mov/cloudflareddns/blob/master/docker-compose.yml.example) docker-compose file and edit it to your needs.
+3. Create a .env file [or use a template](https://github.com/morg-mov/cloudflareddns/blob/master/.env.example) and [set at least the required variables](#variables).
 4. Run the container with `docker-compose up -d` (or however you prefer).
 ### Python
 1. Clone the repository
@@ -25,7 +25,7 @@ cd cloudflareddns
 ```
 2. Install dependencies with `pip install -r requirements.txt`
 3. Run the script with `python cloudflareddns.py` (or however you prefer).
-4. Create a .env file [or use a template](https://github.com/morg-mov/cloudflareddns/blob/main/.env.example) and [set at least the required variables](#variables).
+4. Create a .env file [or use a template](https://github.com/morg-mov/cloudflareddns/blob/master/.env.example) and [set at least the required variables](#variables).
 5. Run the script with `python main.py` (or however you prefer).
 ## Variables
 This image requires the use of multiple environment variables, many of which are required.
