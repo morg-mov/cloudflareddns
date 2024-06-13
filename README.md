@@ -6,7 +6,7 @@ A (wip) docker container/python script that dynamically updates your DNS records
 1. Do one of the following:
     * Pull from ghcr.io:
     ```
-    docker pull ghcr.io/morg-mov/cloudflareddns:latest
+    docker pull ghcr.io/morg-mov/cloudflareddns:master
     ```
     * Clone the repository and build the image: 
     ```
