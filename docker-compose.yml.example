@@ -5,3 +5,4 @@ services:
     image: ghcr.io/morg-mov/cloudflareddns:latest
     env_file: ".env"
     restart: always
+    tty: true
