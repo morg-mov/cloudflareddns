@@ -11,4 +11,5 @@ This project uses several third-party libraries. Here is a list of the libraries
 - **idna**, **python-dotenv**: BSD License
 - **requests**: Apache License 2.0
 
-By using this library, you agree to the terms of all the licenses listed above.
+These licenses are all GPLv3 compatible.
+By using this library, you agree to the terms of all the licenses listed above, and the GPLv3 license that governs this project.
